@@ -18,7 +18,7 @@ impl ops::Add for WrappingU32 {
     type Output = WrappingU32;
     fn add(self, other: Self) -> Self {
         let mut result: u32 = self.value;
-        result += other.value;
+        result = result.wrapping_add(other.value);
         Self { value: result }
     }
 }
